@@ -1,0 +1,25 @@
+.section .data
+
+.globl people , numpeople
+
+numpeople:
+# Calulate the number of people in array
+    .quad (endpeole - people) / PERSON_RECORD_SIZE
+people:
+    # Array of people 
+    .quad 200,  2 , 74 , 20
+    .quad 280 , 2 , 72 , 44
+    .quad 150 , 1 , 68 , 44
+    .quad 250 , 3 , 75 , 30
+    .quad 250 , 2 , 70 , 11
+    .quad 180 , 5,  69 , 65
+
+endpeole:
+    .globl WEIGHT_OFFSET, HAIR_OFFSET , HEIGT_OFSET , AGE_OFFSET
+    .equ WEIGHT_OFFSET , 0
+    .equ HAIR_OFFSET , 8
+    .equ HEIGT_OFSET , 16
+    .equ AGE_OFFSET , 24
+
+.globl PERSON_RECORD_SIZE
+.equ PERSON_RECORD_SIZE, 32
